@@ -12,8 +12,8 @@ def books(request):#must use "api_view()" decorator and "Response" from "rest_fr
     return Response('list of the books', status=status.HTTP_200_OK)
 
 
-#BookList Class API view provides mothods for listing and filtering and creating books
-class BookList(APIView):
+#BookList Class API view provides methods for listing and filtering and creating books
+class BookList(APIView):#must pass APIView as an argument
     def get(self, request): # 2 parameters
         author = request.GET.get('author') # retrieves the value of auther  query parameter from the URL
         if(author): # if author parameter is present
